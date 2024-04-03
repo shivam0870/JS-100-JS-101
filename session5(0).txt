@@ -1,0 +1,30 @@
+While Loop (Condition-based loop)
+Repeat = Loop.
+Repeatedly execute a block of code as long as a specified condition remains true. 
+A "while" loop is a condition-based loop.
+
+A While Loop is used to implement Conditional Loop in Programming
+
+The While Loop is used to repeat a block of code as many times as the condition remains true.
+
+while (condition) {
+  // code block to be executed
+}
+
+//For loop  example:
+
+for (initialization ;  condition ; updation)
+
+{
+	
+}
+
+
+Sequence 
+Sequence is a series of instructions to be carried out in succession i.e. one after the other.
+Selection
+Executing a block of code only when a certain condition is true.
+Iteration
+Repeatedly executing a block of code as long as a specified condition remains true. 
+
+Sometimes, we need to combine all of them in once to achieve a task.

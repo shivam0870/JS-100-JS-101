@@ -1,0 +1,64 @@
+A function is defined using the function keyword
+This is followed by the name of the function followed by the round brackets to pass parameters
+The body of function is written within {}
+
+Naming conventions for function name-
+
+Function names are generally written like this: getName, show_message.
+Spaces are not allowed in function names.
+Try to use only letters, digits and underscore, avoid special characters
+Keywords cannot be used to name functions.
+Choose a meaningful name for the function which clearly tells us what the function will do and avoid generic names (like x, y, tmp)
+Don’t make your names too long
+
+
+Function Parameters- 
+
+Non Parameterized Function
+function sayHello(){
+	console.log(“Hello everyone”);
+}
+
+Parameterized Function
+
+function sum(num1, num2){
+
+var sum = num1+num2;
+	console.log (“Sum is “ + sum);
+
+}
+
+Debrief: Parameters vs. Arguments
+
+A parameter is a variable you create in  a function when you define it.
+An argument is the value that you pass to the function when you call it.
+
+Advantages of Functions:
+
+Reduces the size of code
+Functions makes a program more readable
+Reusability of code
+Makes implementation and debugging much easier
+
+
+The “return” keyword allows a function to return a value back to where the function is being “called”
+
+function fun(){
+    var temp = "My name is Shivam Kumar Singh";
+    console.log(temp);
+}
+fun();
+console.log(temp); //Function Scope -  the variables are only accessible in the function in which they are declared
+hence this will throw an error
+
+Types of functions
+
+Inbuilt functions
+A function that already exists in the language without you having to define it.
+Collection of such functions is called a library. Each library serves a particular purpose.
+Every programming language provides a number of inbuilt libraries.
+
+User defined functions
+A function that you define in your code to implement a specific task.
+
+

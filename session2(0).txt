@@ -1,0 +1,24 @@
+Keywords in Javascript
+Keywords are reserved words used by the compiler. 
+It tells the compiler that the keyword has a specific meaning AND it cannot be used for another purpose.
+
+Ex - var, super, function etc.
+
+Data Types in Javascript - 
+
+String : A string is a series of characters like "Hello World".
+Strings are written within quotes (“ ”). You can use single or double quotes. Example : “Crio”, ‘crio’.
+
+
+Number : All numbers in JavaScript are stored as decimal numbers.
+Numbers can be written with, or without decimals. Example : 34.00, 34
+
+Boolean : Booleans can only have two values: true or false. 
+For example: When you select Dark Mode or Light Mode on browser, the browser remembers it as Dark mode = True.
+
+Applications of javascript -
+
+Web application, web dev, game dev, mobile applications etc.
+
+Variables are used to store and access data when a program is executing. 
+
