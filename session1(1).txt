@@ -1,0 +1,28 @@
+Primitives Data Types
+
+Numbers (2, -100, 3.14, and others), used for math calculations.
+Strings ("hello", "abracadabra", and others), used for text.
+Booleans (true and false), used for logical operations.
+
+
+Keyword    Allows re-declaration   Allows re-asssignment 
+var         Yes                         Yes
+let        No                           Yes
+const         No                      No
+
+
+Now re-declare a new variable using let 
+
+let greeting = "say Hi";
+console.log(greeting) 
+let greeting = "say Hello";
+console.log(greeting) 
+
+//Syntax error
+
+Summary: 
+Values are stored in the memory, and variables are the labels pointing to the memory address where the value is stored. 
+When we assign a value to a variable either directly (e.g. b = 20;) or from one variable to another 
+(e.g. b = a;), a new copy of that value is created and stored in the memory and the variable points to it.
+
+
