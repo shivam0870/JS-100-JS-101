@@ -1,0 +1,26 @@
+In the previous slide, you saw both === and == returned false while comparing equality of a and b. So, what’s the difference between them?
+
+==
+
+Loose equality i.e. checks only on the basis of values, not types.
+
+
+===
+
+Strong equality i.e. checks on the basis of values as well as types.
+
+
+Function - to reuse code
+
+Non-Parametric:
+function greet() {
+    console.log( “Hi” );
+}
+
+Parametric:
+function add( x, y ) {            ->    x & y are parameters
+    return x + y;                 ->    To return the result value
+}
+
+Parametric functions are called with arguments, ex.:   	add( 5, 2 ) ;
+
