@@ -1,0 +1,137 @@
+Searching in Arrays
+Array.includes(element, fromIndex) -
+Checks if array contains given element     (starting from an index - optional). 
+In case fromIndex is not mentioned, it is considered as 0.
+Returns boolean value:
+	- true: if the element is present in the array within the index range fromIndex to last index.
+	- false: if the element is NOT present in the array within the index range fromIndex to last index.
+
+
+
+
+
+let myPlaylist = ['On Top','Attention','Vikram','Sunflower','Vaathi Coming','Check Kar','Circles'];
+
+console.log( arr.includes('Vaathi Coming') );        //true 
+console.log( arr.includes('Vaathi Coming', 5) );      //false
+
+String to Array - split()
+Splits a string into an array of substrings
+
+Syntax with optional parameter:
+	string.split(separator)
+
+
+If separator string is omitted, then an array with the original string is returned
+
+
+
+
+const filePath = "users/john/documents/report.txt";
+const pathSegments = filePath.split("/");
+console.log(pathSegments); //[ 'users', 'john', 'documents', 'report.txt' ]
+const pathSegments2 = "users/john/documents/report.txt".split();   //[ 'users/john/documents/report.txt' ]
+console.log(pathSegments2);
+
+
+
+Array to String - join()
+Joins an array to form a string
+
+Syntax with optional parameter:
+array.join(separator)
+
+If separator string is missing, then default is a comma.
+
+
+var pathSegments = ["Users", "John", "Documents", "report.txt"];
+const filePath = pathSegments.join("/");
+console.log(filePath); //Users/John/Documents/report.txt
+const filePath2 = pathSegments.join();
+console.log(filePath2); //Users,John,Documents,report.txt
+
+Introduction to JavaScript Objects
+Objects are another way to store a collection of values. 
+
+{
+   email: “beaver@gmail.com”,
+   name: “Beaver”
+}
+
+Creating Objects
+There are 3 ways to create an object:
+
+Using object literal
+ 2.     Empty object and then add properties
+  3.     Using new keyword
+
+
+Object Literal
+
+Object is created with curly brackets {} and made up of key-value pairs, also referred to as properties.
+
+ 
+const person = {
+      name: 'Dr Jack'
+};
+
+
+We’ve created an object with one property inside it, one key-value pair. 
+
+The key is named 'name' and the value is the string 'Dr Jack'. 
+
+
+    Code Demo - Accessing Objects
+
+let ob = {name: "Crio", location: "Bengaluru"};
+console.log(ob.name);   // Crio
+
+
+Things to know about Keys
+Object keys can only be strings.
+JavaScript object keys cannot be number, boolean, null, or undefined type values. 
+
+
+Code Demo - Then what will be happen here?
+
+var ob = { 1: "One" };
+
+
+Will this give any error?  //1
+
+
+If it works then how?      //2
+
+Code Demo - How can we access this property
+
+You can access the values of these properties using:
+ 
+
+
+
+
+
+Bracket Notation (test["name"])
+
+
+let ob = {1: "One"};
+//console.log(ob.1 );    error
+console.log(ob[1]);
+
+Code Demo - Accessing Objects
+
+What will be the output:
+
+let name = "Crio"
+let ob = {name: "Criodo"}
+console.log(ob.name) // 1
+console.log(ob[name]) // 2
+
+
+
+
+
+
+
+
+
