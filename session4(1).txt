@@ -1,0 +1,13 @@
+let simpleArray = ['one', 2, 'three', true, false, undefined];
+
+console.log(simpleArray[0]);            //"one"
+
+simpleArray[1] = "two";            	//mutation in place
+
+
+.push() appends data to the end of an array & returns the new array length.
+.shift() removes the first element from an array and returns the removed element.
+.unshift() works like .push(), but adds the element at the beginning of the array.
+.pop() works like .shift(), but it removes the last element of the array.
+
+reverse() - Reverses the order of the elements in the given array, in-place.
