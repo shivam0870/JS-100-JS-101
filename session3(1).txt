@@ -1,0 +1,106 @@
+A string is a sequence of zero or more characters
+Enclosed in single (‘) or double quotes (“)
+Starts and ends with same type of quotes
+
+let favFood = ""; // or let favFood = ‘’;
+
+let name = "Crio"; // or let name = ‘Crio’;
+
+
+Accessing string characters 
+
+
+Bracket notation is a way to get a character at a specific index within a string.
+Indexing starts at Zero (0) instead of 1
+const str = "Crio.do";
+console.log(str[0]);			//C
+
+We can also use charAt(index) 
+console.log(str.charAt(4));        //.
+
+
+charAt vs []
+
+What’s the use of having .charAt() when we already have [] to access character at a particular index of the string?
+charAt() returns an empty string if index is out of range, while bracket notation returns undefined.
+E.g.:
+let str = “Hello!”;
+console.log(str.charAt(6)); // empty string
+console.log(str.charAt[6]); // undefined
+
+
+Code Demo - String Immutability
+
+Let’s try out the following:
+let myStr = "Bob";
+myStr[0] = "J";
+console.log(myStr);
+
+
+Individual characters of a String literal cannot be changed.
+String values are immutable - they cannot be altered once created.
+
+
+
+It might happen that a developer might forget that strings are immutable in JS, and might have a line of code as seen in previous slide:
+myStr[0] = "J";
+And then he will get unexpected output.
+Since strings are immutable in JS, is there a way by which JS should give us an error message the moment we mutate a string? i.e. can we make JS more strict?
+
+Here we use Strict Mode
+
+
+“use strict”
+
+Defines that JavaScript code should be executed in "strict mode".
+
+Strict mode changes previously accepted "bad syntax" into real errors.
+
+For example, with strict mode, you cannot use undeclared variables.
+
+
+Run the below code:
+let myStr = "Bob";
+myStr[0] = "J";
+console.log(myStr);   //Bob 
+
+
+Run the below code:
+	"use strict"
+let myStr = "Bob";
+myStr[0] = "J";
+console.log(myStr);  // myStr[0] = "J";
+         ^
+
+TypeError: Cannot assign to read only property '0' of string 'Bob'
+
+
+Template Strings / Template Literals
+
+A special type of string that makes creating complex strings easier
+Enclosed in backticks
+
+Allows multiline string formatting.
+var str = `This is :
+a template literal !` ;
+
+Variable or JS expression can also be within it, like below:
+`${ variable or js expression }`
+
+
+let firstName = "Mohak";
+let age = 23;
+const greeting = `Happy birthday, ${firstName}!, 
+Your are ${age + 1} years old now.`
+console.log(greeting);
+
+
+
+
+
+
+
+
+
+
+
