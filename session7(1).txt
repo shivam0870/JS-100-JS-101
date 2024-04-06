@@ -1,0 +1,80 @@
+Math function in javascript 
+
+Math.trunc(x) returns the integer part of x.
+console.log(Math.trunc(23.456));    //23
+
+With Math Function
+var a =  4;
+var b = 9;
+console.log(Math.round(a/b));   // 0 
+
+var a =  4;
+var b = 8;
+console.log(Math.round(a/b));   // 1
+
+Floor - shows the lower integer part of the predicted value.
+E.g. if the prediction is $23.456 the value logged on console must be 23, and even if it is $23.61 it must show 23.
+
+𝙼𝚊𝚝𝚑.𝙿𝙸 = π ≈ 3.14159
+
+Function Expressions -
+
+Function Declaration
+
+function display() {
+    console.log('Hello');
+}
+display();  // Hello
+
+		
+
+var call = () => {
+     console.log('Hello');
+}
+call();  
+
+
+Pass by Value
+All the primitive data types are passed by value.
+Boolean, number, string, null and undefined all are passed by value.
+Any changes that we make in the passed item with not reflect in the original item.
+
+function add(num){
+        num = num + 10;
+        console.log(num);  // What will be the output?
+}
+
+var num = 5;
+add(num);
+console.log(num);   // What will be the output?
+
+// 15 and 5
+
+Pass by Reference
+
+All the non primitive data types are passed by reference.
+Arrays, objects and functions all are passed by reference.
+Any changes that we make in the passed item will reflect in the original item.
+
+
+const obj = {
+     name:  "Jhon"
+}
+function changeName(obj){
+    obj.name = "Doe";
+}
+console.log("Object before function call");
+console.log(obj.name);
+changeName(obj);
+console.log("Object after function call");
+console.log(obj.name);
+
+
+Spread Syntax(...)
+
+Spread syntax can be used when all elements from an object or array need to be included in a new array or object.
+
+If any changes are made in the new object or array  those will not reflect in the original object or array.
+
+
+
