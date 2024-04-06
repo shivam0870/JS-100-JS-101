@@ -1,0 +1,172 @@
+Suppose we want to store personal information of a person which is his name, designation, age, and his address.
+But address contains locality, city, state and country, creating another doesn’t make any sense as they are part of one object.
+
+const personalDetails = {
+   name: "Jhon Doe”,
+   designation: "Developer",
+   age: 24
+  }
+         Object - 1
+
+const address = {
+  locality: "1600 rose lane colony",
+  city: "Mumbai",
+  state: "Maharashtra",
+  country: "India"
+}
+                          Object - 2
+
+Nested objects - 
+
+const ourStorage = {
+  "cabinet": {
+    "top drawer": { 
+      "folder1": "a file",
+      "folder2": "secrets"
+    },
+  }
+ };
+
+
+
+Updating properties // 2
+
+ourStorage.cabinet["top drawer"].folder1 = "few files";
+ourStorage.cabinet["top drawer"].folder2 =  "secret files";
+
+
+const personalDetails = {
+   name: "John Doe",
+   designation: "Data Analyst",
+   age: 24,
+   address: {
+      locality: "1600 roselane colony",
+      city: "Mumbai",
+      state: "Maharashtra",
+      country: "India"
+   }
+}
+
+
+
+console.log (personalDetails.address.city); //2
+or
+console.log(personalDetails['address']['city']);//2
+
+
+Object Destructuring -
+
+const obj = {
+    name : Ravi,
+    age : 30
+}
+
+var name = obj.name;
+var age = obj.age;
+//This method is without Destructuring
+
+const { name, age } = obj; //unpacking object properties using destructuring
+
+an example of object destructuring is
+
+function displayInfo(employee){
+    let {fnam,lname,position,department} = employee;
+    console.log(`Name: ${employee.fnam}`);
+}
+
+typeof-
+
+typeof in JavaScript is an operator used for type checking and returns a string indicating the data type of the expression written in front of it.
+ 
+Object vs array : 
+
+const obj = {"name":"crio.do"};
+const arr = [4,3,7,0];
+
+Array.isArray(obj); //false
+Array.isArray(arr) // true
+
+Array of objects : 
+
+student [
+
+     Object #1,
+
+     Object #2,
+
+     Object #3
+
+]
+{
+    name: "Kevin",
+    rollNumber: 10,
+    stream: "PCM"
+}
+          Object #1
+
+{
+    name: "Martin",
+    rollNumber: 20,
+    stream: "PCM"
+}
+          Object #2
+
+{
+    name: "Robert",
+    rollNumber: 30,
+    stream: "PCB"
+}
+          Object #3
+
+
+
+var student = [
+
+      {
+       name: "Kevin",
+       rollNumber: 10,
+       stream: "PCM"
+      },
+
+      {
+        name: "Martin",
+        rollNumber: 20,
+        stream: "PCM"
+      },
+
+      {
+         name: "Robert",
+         rollNumber: 30,
+         stream: "PCB"
+      }
+]
+
+Special numbers in javascript - 
+
+
+let scale = 0;
+let a = 1 / scale;
+console.log(a); //Infinity 
+
+let scale = 0;
+let a = 0 / scale;
+console.log(a); //NaN
+
+let scale = 0;
+let a = -1 / scale;
+console.log(a); //-Infinity
+
+let scale = 1;
+let a = -0 / scale;
+console.log(a); //-0
+
+
+
+
+
+
+
+
+
+
+
