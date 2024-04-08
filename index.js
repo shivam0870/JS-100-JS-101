@@ -27,3 +27,15 @@ changeName(obj);
 console.log("Object after function call");
 console.log(obj.name);
 
+var a = 10; // variable 'a' global scope
+
+function func(){
+   console.log("a is accessible within the function:", a);
+}
+func();
+
+console.log("a is accessible outside the function:", a);
+
+console.log(a);
+var a = 10;
+

@@ -1,0 +1,111 @@
+Scope :
+
+The scope is the extent to which a variable is accessible while executing the code.
+Scope basically partitions the visibility of variables throughout the program.
+
+Global Scope
+If we want a variable to be accessible anywhere in the program we define it globally.
+It is the outermost scope in the javascript 
+
+var a = 10; // variable 'a' global scope
+
+function func(){
+   console.log("a is accessible within the function:", a);
+}
+func();
+
+console.log("a is accessible outside the function:", a);
+
+//Output 
+a is accessible within the function: 10
+a is accessible outside the function: 10
+
+Local Scope
+
+If we want a variable to be accessible locally in the program we define it:
+
+1. Within a function (Function scope  - var ) 
+2. Within a block (Block scope - let & const)
+
+let todoList = [];
+
+function addTodo(item){
+    let todoItem = item;
+    todoList.push(item);
+}
+
+addTodo('Learn JavaScript');
+console.log(todoList); //Uncaught ReferenceError todoItem is not defined 
+
+Block Scope
+
+Block scope is a local scope bounded between two curly brackets {}. 
+The block scope lets you limit the accessibility of all variables declared inside it. 
+
+
+Variables declared using  let or const, can’t be accessed outside the curly brackets {}
+
+
+Variables declared using var, can be accessed outside the curly brackets {}. 
+
+var a = 10;
+func();
+
+function func(){
+    if(a == 10){
+        var x = 10;
+        console.log(10); // ‘x’ can be accessed within the block scope
+
+    }
+    console.log(x);  //‘x’ can be accessed outside the block scope
+
+}
+
+console.log(x);     //‘x’ can’t be accessed outside the function scope
+
+
+What if we have a situation wherein we want to inner scope has to access the variable of the outer scope.
+Lexical Scope
+Lexical scope is ability for a inner scope to access variables from the outer scope. 
+
+That means inner scope is lexically bound to the outer scope. 
+
+
+Code Demo - Lexical Scope
+function parent() {
+  const message = "I am from parent";
+
+  function child() {
+    console.log(message + " Called from child function ");
+  }
+  child();
+}
+
+parent();
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+console.log(a);
+var a = 10;  // o/p - 10
+
+Hoisting
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution.
+
+Code Demo - Hoisting Variable Declaration
+
+Variables declared with const and let are not hoisted.
+Remember “Function Declarations” are hoisted entirely.
+
+JavaScript Declarations are Hoisted
+In JavaScript, a variable can be declared after it has been used.
+
+In other words; a variable can be used before it has been declared.
+
+Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+The let and const Keywords
+Variables defined with let and const are hoisted to the top of the block, but not initialized.
+
+Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared.
+
+Using a let variable before it is declared will result in a ReferenceError.
+
