@@ -1,0 +1,289 @@
+For...Each
+forEach is invoked on an array, it iterates or loops through the array.
+
+Without arrow syntax
+const nums = [1, 2, 3, 4];
+nums.forEach( function iterate(value) {
+    console.log(value);
+});
+
+With arrow syntax
+const nums = [1, 2, 3, 4];
+nums.forEach((value) => console.log(value));
+
+foreach(value)    -  value is the element in the array 
+foreach(value, index)    -  index is the index of the element in the array 
+
+const nums = [1, 2, 3, 4];
+nums.forEach((value, index) => {
+  console.log("Element " + value + " is at index " + index);
+});
+
+Consider a scenario…
+
+If we want to search an element in the array, and get its first occurrence, how can we do that?
+const data = [
+  { _id: "1", name: "Vivek" },
+  { _id: "2", name: "Neha" },
+  { _id: "3", name: "Satya" },
+  { _id: "4", name: "Amit" },
+];
+
+for (var itr = 0; itr < data.length; itr++){
+    if(data[itr]._id === "4"){
+       console.log(data[itr]);
+	 break;
+    }
+}
+
+Find
+
+find() method returns the value of the first element in the provided array that satisfies the condition mentioned in the callback function.
+
+	find(callbackFn)
+
+const data = [
+  { _id: "1", name: "Vivek" },
+  { _id: "2", name: "Neha" },
+  { _id: "3", name: "Satya" },
+  { _id: "4", name: "Amit" },
+];
+const res = data.find((item) => item._id === "1");
+console.log(res); //{ _id: '1', name: 'Vivek' }
+
+Introduction to Sorting
+
+sort() sorts elements of an array in-place and returns the sorted array.
+The default sort order is ascending.
+
+
+const nums = [4, 20, 12, 1, 100];
+console.log(nums.sort()); // Q. What would this print?
+
+[1, 100, 12, 20, 4]
+Let’s understand why in the next slide.
+
+
+sort() tries to convert the array elements to strings first and sorts lexicographically (dictionary order).
+We can customise how sort is done with a comparator function.
+
+The comparator functions takes in two arguments to compare (say a and b) 
+If the function returns -ve number then that means to sort a before b
+If the function returns a +ve number that means to sort b before a
+If the function returns 0 then it means to keep the original ordering of a and b
+
+nums.sort(function (a, b) {
+if (a < b) return -1; // or any negative value
+else if (a > b) return 1; // or any positive value
+else return 0;
+})
+
+
+
+
+map() method that allows you to transforms the array elements in a cleaner way.
+
+
+map() method is used for creating a new array from an existing one, applying a function to each one of the elements of the original array.
+.
+
+function multiplyElements(arr,mutiplyFn) {
+    const newArr = [];
+
+    for(let i = 0; i < arr.length; i++) {
+        newArr[i] = mutiplyFn(arr[i]);
+    }
+    return newArr;
+}
+
+const arr = [10, 30, 50];
+
+function mutiplyFn(item){
+    return item * 2;
+}
+
+const arrDoubled = multiplyElements(arr,mutiplyFn);
+console.log(arrDoubled);       // [ 20, 60, 100 ]
+
+
+function multiplyElements(arr, mutiplyFn) {
+    const newArr = [];
+
+    for(let i = 0; i < arr.length; i++) {
+        newArr[i] = mutiplyFn(arr[i]);
+    }
+    return newArr;
+}
+
+const arr = [10, 30, 50];
+
+function mutiplyFn(item){
+    return item * 2;
+}
+
+const arrDoubled = arr.map(mutiplyFn);
+console.log(arrDoubled);       // [ 20, 60, 100 ]
+console.log(arr);    // original array is unchanged
+
+
+const arr = [10, 30, 50];
+const arrDoubled = arr.map((item) => item * 2);
+console.log(arrDoubled);
+
+
+Consider a scenarion - 
+
+let products = [
+    { name: 'Laptop', category: 'Electronics', price: 1200 },
+    { name: 'Shirt', category: 'Apparel', price: 50 },
+    // more products...
+];
+
+let filteredProducts = [];
+for (let i = 0; i < products.length; i++) {
+    if (products[i].category === 'Electronics') {
+        filteredProducts.push(products[i]);
+    }
+}
+
+console.log(filteredProducts);
+
+
+Filter
+
+filter() method takes in a callback that applies a condition against each element of the array on which the filter() is called.
+ If this conditional returns true, the element gets pushed to the output array otherwise it will not be pushed.
+
+let products = [
+    { name: 'Laptop', category: 'Electronics', price: 1200 },
+    { name: 'Shirt', category: 'Apparel', price: 50 },
+    // more products...
+];
+
+let filteredProducts = [];
+for (let i = 0; i < products.length; i++) {                                 
+    if (products[i].category === 'Electronics') {
+        filteredProducts.push(products[i]);
+    }
+}
+
+console.log(filteredProducts);
+
+     ====>>>>  
+
+          let filteredProducts = products.filter(product => product.category === 'Electronics');
+console.log(filteredProducts);
+
+The reduce() method reduces an array of values down to just one value!
+const newArray = array.reduce(accumulatorFn,initialValue);
+(accumulator, currentValue, index, currentArray) => {
+      //Reducer logic
+  }
+
+
+
+let cart = [
+    { item: 'Book', price: 12.99 },
+    { item: 'T-shirt', price: 19.99 },
+    // more items...
+];
+
+let total = 0;
+for (let i = 0; i < cart.length; i++) {
+    total += cart[i].price;
+}
+
+console.log("Total price:", total);
+      |
+      >
+
+      let total = cart.reduce((accumulator, currentItem) => accumulator + currentItem.price, 0);
+
+console.log("Total price:", total);
+
+
+splice() allows us to add and/or remove array elements inplace
+
+
+splice() not only modifies the array it's being called on, but it also returns a new array containing the value of the removed elements.
+
+
+let playlist = ['Song 1', 'Song 2', 'Song 3', 'Song 4'];
+
+// Task: Remove 'Song 2' and add 'New Song' in its place
+let newPlaylist = [];
+let removedSong = '';
+for (let i = 0; i < playlist.length; i++) {
+    if (playlist[i] === 'Song 2') {
+        removedSong = playlist[i];
+        newPlaylist.push('New Song');
+    } else {
+        newPlaylist.push(playlist[i]);
+    }
+}
+
+playlist = newPlaylist;
+
+console.log("Updated Playlist:", playlist);
+console.log("Removed Song:", removedSong);
+    Instead of this 
+
+    let index = playlist.indexOf('Song 2');
+if (index !== -1) {
+    removedSong = playlist.splice(index, 1, 'New Song')[0];
+}
+
+console.log("Updated Playlist:", playlist);
+console.log("Removed Song:", removedSong);
+
+
+
+Splice Variations
+
+
+splice(start) - Takes in the start index of the array. 
+
+splice(start, deleteCount) - Deletes the deleteCount number of elements from the start index.
+
+splice(start, deleteCount, newItem1) -  Adds new element newItem1 right after the delete operation.
+
+
+function deleteElements(months,start){
+     months.splice(start);
+}
+
+const months = ['Jan', 'March', 'April', 'June'];
+deleteElements(months, 1);
+console.log(months);    // [‘Jan’]
+
+
+slice
+
+slice(start, end) copies or extracts a given number of elements to a new array, leaving the array it is called upon untouched.
+
+The slice() method selects from a given start, up to a (not inclusive) given end.
+
+The slice() method returns a new array containing the extracted elements.
+
+
+let allArticles = [
+    // array of 20 news articles...
+];
+
+let topArticles = [];
+for (let i = 0; i < 6; i++) {
+topArticles.push(allArticles[i]);
+}
+
+console.log("Top 6 Articles:",topArticles);
+
+
+let allArticles = [
+    // array of 20 news articles...
+];
+
+let topArticles = allArticles.slice(0, 5);
+
+console.log("Top 5 Articles:", topArticles);
+
+
